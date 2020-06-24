@@ -1,0 +1,32 @@
+/* global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --color-1: #ff9f1c;
+    --color-2: #ffbf69;
+    --color-3: #ffffff;
+    --color-4: #cbf3f0;
+    --color-5: #2ec4b6;
+  }
+body {
+    color: var(--color-1);
+    background-color: var(--color-4);
+    font-family: Helvetica, Arial, sans-serif;
+}
+/* header styles */
+header {
+    padding: 25px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+header h1 {
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(255, 159, 28, 0.4);
+}
+.timer {
+    color: var(--color-5);
+}
