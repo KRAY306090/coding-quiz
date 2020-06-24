@@ -55,7 +55,7 @@ main {
     margin-top: 10px;
 }
 .answer-choice:hover {
-    background-color: var(--color-4);
+    background-color: var(--color-2);
 }
 .answer-wrapper {
     width: 80%;
