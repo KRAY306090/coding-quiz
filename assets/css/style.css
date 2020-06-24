@@ -35,10 +35,30 @@ main {
     margin-top: 100px;
 }
 .question {
-    height: 50px;
+    height: 100px;
     width: 80%;
     margin: auto;
 }
 .question-text {
     text-align:center;
+}
+/* button styles */
+.answer-choice {
+    background-color: var(--color-5);
+    border: 2px solid var(--color-3);
+    border-radius: 25px;
+    color: var(--color-3);
+    padding: 10px 24px;
+    cursor: pointer;
+    width: 25%;
+    display: block;
+    margin-top: 10px;
+}
+.answer-choice:hover {
+    background-color: var(--color-4);
+}
+.answer-wrapper {
+    width: 80%;
+    margin: auto;
+    
 }
