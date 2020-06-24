@@ -62,3 +62,18 @@ main {
     margin: auto;
     
 }
+/* highscore styles */
+.start, .highscore {
+    display: none;
+}
+.feedback {
+    height: 100px;
+    width: 80%;
+    margin: auto;
+    margin-top: 50px;
+    border-top: 1px solid var(--color-1);
+}
+.feedback p {
+    text-align: center;
+    padding: 20px;
+}
