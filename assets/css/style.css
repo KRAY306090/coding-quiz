@@ -30,3 +30,15 @@ header h1 {
 .timer {
     color: var(--color-5);
 }
+/* Question styles */
+main {
+    margin-top: 100px;
+}
+.question {
+    height: 50px;
+    width: 80%;
+    margin: auto;
+}
+.question-text {
+    text-align:center;
+}
