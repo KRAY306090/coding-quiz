@@ -63,7 +63,7 @@ main {
     
 }
 /* highscore styles */
-.start, .highscore {
+.start, .highscore, .feedback, .questionOne, .questionTwo {
     display: none;
 }
 .feedback {

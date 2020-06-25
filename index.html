@@ -18,23 +18,19 @@
         <p>Press start below to begin.</p>
         <button class="start-btn">Start</button>
     </section>
-    <!-- quiz page -->
-    <main>
+    <!-- Question One -->
+    <section class="question" id="question">
         <div class="question" id="question">
-            <h2 class="question-text">The question will go here! This is an awesome question. I hope you get it right!</h2>
+            <h2 class="question-text" id="question-text"></h2>
         </div>
         <div class="answer-wrapper">
             <button class="answer-choice" id="choice-one">
-                Choice One
             </button>
             <button class="answer-choice" id="choice-two">
-                Choice Two
             </button>
             <button class="answer-choice" id="choice-three">
-                Choice Three
             </button>
             <button class="answer-choice" id="choice-four">
-                Choice Four
             </button>
         </div>
         <div class="feedback">
@@ -42,7 +38,12 @@
                 Correct!
             </p>
         </div>
-    </main>
+        <div class="wrong feedback">
+            <p class="feedback-text">
+                Wrong :(
+            </p>
+        </div>
+    </section>
     <!-- High score page -->
     <section class="highscore">
         <h2>This is where the high score will be displayed!</h2>
