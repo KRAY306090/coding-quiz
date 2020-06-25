@@ -43,7 +43,7 @@ main {
     text-align:center;
 }
 /* button styles */
-.answer-choice {
+.answer-choice, .start button {
     background-color: var(--color-5);
     border: 2px solid var(--color-3);
     border-radius: 25px;
@@ -63,7 +63,7 @@ main {
     
 }
 /* highscore styles */
-.start, .highscore, .feedback, .questionOne, .questionTwo {
+.highscore, .feedback, .page-content {
     display: none;
 }
 .feedback {
@@ -76,4 +76,20 @@ main {
 .feedback p {
     text-align: center;
     padding: 20px;
+}
+
+.start {
+    width: 80%;
+    margin: auto;
+}
+.start h2, .start p {
+    text-align: center;
+    padding: 10px;
+}
+.start button {
+    margin: auto;
+    margin-top: 50px;
+}
+.start h2 {
+    margin-top: 100px;
 }
