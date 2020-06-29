@@ -10,10 +10,10 @@ var choiceTwoEl = document.getElementById("choice-two");
 var choiceThreeEl = document.getElementById("choice-three");
 var choiceFourEl = document.getElementById("choice-four");
 var questions = [{question: "What does JSON stand for?", a: "Derulo???", b: "JavaScript Object Notation", c: "JavaScript Only Nodes", d: "Java Source Oriented Node", correct: "b"},
-                {question: "Question 2?", a: "a", b: "b", c: "c", d: "a", correct: "a"},
-                {question: "Question 3?", a: "a", b: "b", c: "c", d: "b", correct: "b"},
-                {question: "Question 4?", a: "a", b: "b", c: "c", d: "c", correct: "c"},
-                {question: "Question 5?", a: "a", b: "b", c: "c", d: "d", correct: "d"}
+                {question: "What way can you properly declare a new function?", a: "var mouse = function() {}", b: "function mouse() {}", c: "neither", d: "A and B", correct: "d"},
+                {question: "Who invented Javascript?", a: "Brendan Eich", b: "John Resig", c: "Bill Gates", d: "Niklaus Wirth", correct: "a"},
+                {question: "How would you say that two values are equivalent to eachother?", a: "+=", b: "=", c: "==", d: "===", correct: "d"},
+                {question: "Is JavaScript the same as Java?", a: "YES", b: "NO NO NO", c: "sometimes", d: "Coffee?", correct: "b"}
 ];
 var submitName = function() {
     // change to leader board
