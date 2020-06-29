@@ -65,9 +65,6 @@ var questionValidator = function(answerChoice) {
     };    
 var startQuiz = function() {
     //make start screen dissapear
-    document.getElementById("leader").style.display = "none";
-    document.getElementById("highScore").style.display = "none";
-    score = 0;
     console.log("quiz started");
     document.getElementById("start").style.display = "none";
     document.getElementById("page-content").style.display = "block";
@@ -90,6 +87,14 @@ var nextQuestion = function() {
     }
 
 };
+var reset = function() {
+    document.getElementById("leader").style.display = "none";
+    document.getElementById("highScore").style.display = "none";
+    score = 0;
+    questionIndex = 0;
+    document.getElementById("start").style.display = "block";
+    count = 30;
+}
 
 startButtonEl.addEventListener("click", startQuiz);
 
