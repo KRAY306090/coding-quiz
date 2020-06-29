@@ -10,43 +10,47 @@
     <!-- main title will stay same -->
   <header>
         <h1 class="main-title">Coding Quiz</h1>
-        <p class="timer">Timer</p>
+        <div class="timer">Quiz ends in <span id="time">2</span> minutes!</div>
     </header>
     <!-- start page -->
-    <section class="start">
+    <section class="start" id="start">
         <h2>Welcome to my coding quiz!</h2>
         <p>Press start below to begin.</p>
-        <button class="start-btn">Start</button>
+        <button class="start-btn" id="start-btn">Start</button>
     </section>
     <!-- Question One -->
     <section class="page-content" id="page-content">
         <div class="question" id="question">
             <h2 class="question-text" id="question-text"></h2>
         </div>
-        <div class="answer-wrapper">
-            <button class="answer-choice" id="choice-one">
+        <div class="answer-wrapper" id="answer-buttons">
+            <button class="answer-choice" id="choice-one" onclick="questionValidator('a')">
             </button>
-            <button class="answer-choice" id="choice-two">
+            <button class="answer-choice" id="choice-two" onclick="questionValidator('b')">
             </button>
-            <button class="answer-choice" id="choice-three">
+            <button class="answer-choice" id="choice-three" onclick="questionValidator('c')">
             </button>
-            <button class="answer-choice" id="choice-four">
+            <button class="answer-choice" id="choice-four" onclick="questionValidator('d')">
             </button>
         </div>
-        <div class="feedback">
+        <div class="feedback" id="right">
             <p class="feedback-text">
                 Correct!
             </p>
         </div>
-        <div class="wrong feedback">
+        <div class="wrong feedback" id="wrong">
             <p class="feedback-text">
                 Wrong :(
             </p>
         </div>
     </section>
     <!-- High score page -->
-    <section class="highscore">
-        <h2>This is where the high score will be displayed!</h2>
+    <section class="highscore" id="highScore">
+        <h2>Your Score:</h2>
+        <div class="score" id="score">Score</div>
+    </section>
+    <section class="leader" id="leader">
+
     </section>
     <script src="assets/js/script.js"></script>
 </body>

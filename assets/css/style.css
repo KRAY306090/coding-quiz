@@ -93,3 +93,20 @@ main {
 .start h2 {
     margin-top: 100px;
 }
+/* high score styles */
+.highscore h2 {
+    text-align: center;
+    margin: auto;
+    padding: 25px;
+}
+.highscore {
+    margin-top: 175px;
+}
+.score {
+    background-color: var(--color-3);
+    width: 25%;
+    margin: auto;
+    text-align: center;
+    padding: 10px 25px;
+    border: solid 2px var(--color-5);
+}

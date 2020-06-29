@@ -1,67 +1,88 @@
 var startButtonEl = document.getElementById("start-btn");
-var pageContentEl = document.querySelector("#page-content");
+var questionIndex = 0;
+var score = 0;
+var scoreEl = document.getElementById("score");
 var questionEl = document.getElementById("question-text");
-
-var aEl = document.getElementById("choice-one");
-var bEl = document.getElementById("choice-two");
-var cEl = document.getElementById("choice-three");
-var dEl = document.getElementById("choice-four");
-var question = [{q: "What does JSON stand for?",a: "Derulo???", b: "JavaScript Object Notation", c: "JavaScript Only Nodes", d: "Java Source Oriented Node", correct: "JavaScript Object Notation"},
-                {q: "Question 2!", a: "a", b: "b", c: "c", d: "d", correct: "a"},
-                {q: "Question 3!", a: "a", b: "b", c: "c", d: "d", correct: "b"},
-                {q: "Question 4!", a: "a", b: "b", c: "c", d: "d", correct: "c"},
-                {q: "Question 5!", a: "a", b: "b", c: "c", d: "d", correct: "d"}
+var choiceOneEl = document.getElementById("choice-one");
+var choiceTwoEl = document.getElementById("choice-two");
+var choiceThreeEl = document.getElementById("choice-three");
+var choiceFourEl = document.getElementById("choice-four");
+var questions = [{question: "What does JSON stand for?", a: "Derulo???", b: "JavaScript Object Notation", c: "JavaScript Only Nodes", d: "Java Source Oriented Node", correct: "b"},
+                {question: "Question 2?", a: "a", b: "b", c: "c", d: "a", correct: "a"},
+                {question: "Question 3?", a: "a", b: "b", c: "c", d: "b", correct: "b"},
+                {question: "Question 4?", a: "a", b: "b", c: "c", d: "c", correct: "c"},
+                {question: "Question 5?", a: "a", b: "b", c: "c", d: "d", correct: "d"}
 ];
- var startQuiz = function(event) {
-     //upon click of sart button:
-     //timer starts counting down
-     //start screen is switched to no display
-     //question screen is displayed
-     //game listens for button clicks
- }
+var startTimer = function(duration, display) {
+    var timer = duration, minutes, seconds;
+    setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
 
-var questionLoop = function(answerChoice) {
-for (var i = 1; i <= (question.length - 1); i++) {
-    questionEl.textContent = question[i].q;
-    aEl.textContent = question[i].a;
-    bEl.textContent = question[i].b;
-    cEl.textContent = question[i].c;
-    dEl.textContent = question[i].d;
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = minutes + ":" + seconds;
+
+        if (--timer < 0) {
+            timer = duration;
+        }
+    }, 1000);
+}
+window.onload = function () {
+    var twoMinutes = 60 * 2,
+        display = document.querySelector('#time');
+    startTimer(twoMinutes, display);
+};
+var endGame = function() {
+    document.getElementById("page-content").style.display = "none";
+    document.getElementById("highScore").style.display = "block";
+    console.log(score);
+    scoreEl.innerText = score;
 
 
-    
-    if (answerChoice === question[i].correct) {
-        console.log("Correct");
+}
+var questionValidator = function(answerChoice) {
+    document.getElementById("right").style.display = "none";
+    document.getElementById("wrong").style.display = "none";
+    if (answerChoice = questions[questionIndex].correct) {
+        //1. add to score//2. make correct appear
+        document.getElementById("right").style.display = "block";
+        console.log("correct");
+        score++;
     }
     else {
-        console.log("Incorrect");
-    }
-
+    //make wrong apper
+    document.getElementById("wrong").style.display = "block";
+    console.log("wrong");
+    } 
+    //add 1 to iterations of the array
+    questionIndex++;
+    nextQuestion();
+    };    
+var startQuiz = function() {
+    //make start screen dissapear
+    console.log("quiz started");
+    document.getElementById("start").style.display = "none";
+    document.getElementById("page-content").style.display = "block";
+    nextQuestion();
     
-}
 };
-var buttonHandler = function(event) {
-    var targetEl = event.target;
-
-    if (targetEl.matches("choice-one")) {
-      var answerChoice = document.getElementById("choice-one").textContent;
-      questionLoop(answerChoice);
+var nextQuestion = function() {
+    //put the content into boxes based on the iteration of the array received if it is less than the array length
+    if (questionIndex < questions.length) {
+        questionEl.innerText = questions[questionIndex].question;
+        choiceOneEl.innerText = questions[questionIndex].a;
+        choiceTwoEl.innerText = questions[questionIndex].b;
+        choiceThreeEl.innerText = questions[questionIndex].c;
+        choiceFourEl.innerText = questions[questionIndex].d;
+    }
+    //if greater than length of array then it will call the end game function
+    else {
+        endGame();
     }
 
-    else if (event.target.matches("choice-two")) {
-      var answerChoice = document.getElementById("choice-two").textContent;
-      questionLoop(answerChoice);
-    }
-    else if (event.target.matches("choice-three")) {
-        var answerChoice = document.getElementById("choice-three").textContent;
-        questionLoop(answerChoice);
-      }
-    else if(event.target.matches("choice-four")) {
-        var answerChoice = document.getElementById("choice-four").textContent;
-        questionLoop(answerChoice);
-    }
 };
+
 startButtonEl.addEventListener("click", startQuiz);
-
-
 
