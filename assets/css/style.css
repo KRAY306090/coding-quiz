@@ -32,7 +32,7 @@ header h1 {
 }
 /* Question styles */
 main {
-    margin-top: 100px;
+    margin-top: 200px;
 }
 .question {
     height: 100px;
@@ -41,9 +41,10 @@ main {
 }
 .question-text {
     text-align:center;
+    margin-top: 100px;
 }
 /* button styles */
-.answer-choice, .start button {
+.answer-choice, .start button, .submit {
     background-color: var(--color-5);
     border: 2px solid var(--color-3);
     border-radius: 25px;
@@ -63,7 +64,7 @@ main {
     
 }
 /* highscore styles */
-.highscore, .feedback, .page-content {
+.start, .feedback, .page-content {
     display: none;
 }
 .feedback {
@@ -110,3 +111,12 @@ main {
     padding: 10px 25px;
     border: solid 2px var(--color-5);
 }
+
+.form-wrapper {
+    text-align: center;
+    margin: 50px auto;
+}
+.submit {
+    margin: 50px auto;
+}
+
