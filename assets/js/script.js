@@ -21,7 +21,6 @@ var submitName = function() {
     document.getElementById("leader").style.display = "block";
     var nickName = document.getElementById("nickname").value;
     leaderBoxEl.innerHTML  = "<p>" + nickName + ":   " + score + "</p>";
-    
 }
 var count = 30;
 function countDown(){
@@ -41,9 +40,6 @@ var endGame = function() {
     console.log(score);
     scoreEl.innerText = score;
     count = 0;
-
-
-
 }
 var questionValidator = function(answerChoice) {
     document.getElementById("right").style.display = "none";
@@ -69,8 +65,7 @@ var startQuiz = function() {
     document.getElementById("start").style.display = "none";
     document.getElementById("page-content").style.display = "block";
     countDown();
-    nextQuestion();
-    
+    nextQuestion(); 
 };
 var nextQuestion = function() {
     //put the content into boxes based on the iteration of the array received if it is less than the array length
@@ -85,7 +80,6 @@ var nextQuestion = function() {
     else {
         endGame();
     }
-
 };
 var reset = function() {
     document.getElementById("leader").style.display = "none";
@@ -95,6 +89,5 @@ var reset = function() {
     document.getElementById("start").style.display = "block";
     count = 30;
 }
-
 startButtonEl.addEventListener("click", startQuiz);
 
