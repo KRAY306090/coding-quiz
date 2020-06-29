@@ -23,32 +23,25 @@ var submitName = function() {
     leaderBoxEl.innerHTML  = "<p>" + nickName + ":   " + score + "</p>";
     
 }
-var startTimer = function(duration, display) {
-    var timer = duration, minutes, seconds;
-    setInterval(function () {
-        minutes = parseInt(timer / 60, 10);
-        seconds = parseInt(timer % 60, 10);
-
-        minutes = minutes < 10 ? "0" + minutes : minutes;
-        seconds = seconds < 10 ? "0" + seconds : seconds;
-
-        display.textContent = minutes + ":" + seconds;
-
-        if (--timer < 0) {
-            timer = duration;
-        }
-    }, 1000);
+var count = 30;
+function countDown(){
+var timer = document.getElementById("timer");
+if(count > 0){
+    count--;
+    timer.innerHTML = "You have "+count+" seconds to finish.";
+    setTimeout("countDown()", 1000);
 }
-window.onload = function () {
-    var twoMinutes = 60 * 2,
-        display = document.querySelector('#time');
-    startTimer(twoMinutes, display);
-};
+else{
+    endGame();
+}
+}
 var endGame = function() {
     document.getElementById("page-content").style.display = "none";
     document.getElementById("highScore").style.display = "block";
     console.log(score);
     scoreEl.innerText = score;
+    count = 0;
+
 
 
 }
@@ -78,6 +71,7 @@ var startQuiz = function() {
     console.log("quiz started");
     document.getElementById("start").style.display = "none";
     document.getElementById("page-content").style.display = "block";
+    countDown();
     nextQuestion();
     
 };
