@@ -55,7 +55,7 @@ var endGame = function() {
 var questionValidator = function(answerChoice) {
     document.getElementById("right").style.display = "none";
     document.getElementById("wrong").style.display = "none";
-    if (answerChoice = questions[questionIndex].correct) {
+    if (answerChoice === questions[questionIndex].correct) {
         //1. add to score//2. make correct appear
         document.getElementById("right").style.display = "block";
         console.log("correct");
