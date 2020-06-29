@@ -1,6 +1,8 @@
 var startButtonEl = document.getElementById("start-btn");
 var questionIndex = 0;
 var score = 0;
+attemptCounter = 0;
+var leaderBoxEl = document.getElementById("leaderBox");
 var scoreEl = document.getElementById("score");
 var questionEl = document.getElementById("question-text");
 var choiceOneEl = document.getElementById("choice-one");
@@ -13,6 +15,14 @@ var questions = [{question: "What does JSON stand for?", a: "Derulo???", b: "Jav
                 {question: "Question 4?", a: "a", b: "b", c: "c", d: "c", correct: "c"},
                 {question: "Question 5?", a: "a", b: "b", c: "c", d: "d", correct: "d"}
 ];
+var submitName = function() {
+    // change to leader board
+    document.getElementById("highScore").style.display = "none";
+    document.getElementById("leader").style.display = "block";
+    var nickName = document.getElementById("nickname").value;
+    leaderBoxEl.innerHTML  = "<p>" + nickName + ":   " + score + "</p>";
+    
+}
 var startTimer = function(duration, display) {
     var timer = duration, minutes, seconds;
     setInterval(function () {
@@ -62,6 +72,9 @@ var questionValidator = function(answerChoice) {
     };    
 var startQuiz = function() {
     //make start screen dissapear
+    document.getElementById("leader").style.display = "none";
+    document.getElementById("highScore").style.display = "none";
+    score = 0;
     console.log("quiz started");
     document.getElementById("start").style.display = "none";
     document.getElementById("page-content").style.display = "block";

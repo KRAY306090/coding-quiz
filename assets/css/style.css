@@ -64,7 +64,7 @@ main {
     
 }
 /* highscore styles */
-.start, .highscore, .feedback, .page-content {
+.leader, .highscore, .feedback, .page-content {
     display: none;
 }
 .feedback {
