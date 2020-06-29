@@ -64,7 +64,7 @@ main {
     
 }
 /* highscore styles */
-.start, .feedback, .page-content {
+.start, .highscore, .feedback, .page-content {
     display: none;
 }
 .feedback {
@@ -95,7 +95,7 @@ main {
     margin-top: 100px;
 }
 /* high score styles */
-.highscore h2 {
+.highscore h2, .leader h2 {
     text-align: center;
     margin: auto;
     padding: 25px;
@@ -103,7 +103,7 @@ main {
 .highscore {
     margin-top: 175px;
 }
-.score {
+.score, .leaderBox {
     background-color: var(--color-3);
     width: 25%;
     margin: auto;
@@ -119,4 +119,5 @@ main {
 .submit {
     margin: 50px auto;
 }
+/* Leader Board styles */
 
